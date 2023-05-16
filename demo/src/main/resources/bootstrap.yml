@@ -1,0 +1,11 @@
+elasticsearch:
+#  host: 116.205.230.143
+#  port: 9200
+spring:
+  # 应用名称
+  application:
+    name: demo
+  elasticsearch:
+    rest:
+      # 定位ES的位置
+#      uris: http://116.205.230.143:9200

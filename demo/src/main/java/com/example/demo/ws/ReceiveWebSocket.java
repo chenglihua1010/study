@@ -2,6 +2,7 @@ package com.example.demo.ws;
 
 
 import com.example.demo.service.ShipService;
+import com.example.demo.websocket.BaseWebSocketEndPoint;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -15,7 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @ServerEndpoint(value = "/ws/connect/receive/{userId}/{sign}")
 @Component
 @Log4j2
-public class ReceiveWebSocket {
+public class ReceiveWebSocket extends BaseWebSocketEndPoint {
     /**
      * 静态变量，用来记录当前在线连接数。应该把它设计成线程安全的
      */

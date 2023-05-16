@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import cn.hutool.core.convert.Convert;
 import com.alibaba.fastjson.JSONObject;
 import com.example.demo.dto.ShipData;
 import com.example.demo.ws.SendWebSocket;
@@ -30,6 +31,8 @@ public class ShipService {
      * @param data 单个航行数据
      */
     public void receiveData(String data) throws IOException {
+        List<ShipData> shipData1 = Convert.toList(ShipData.class, data);
+
         ShipData shipData = JSONObject.parseObject(data, ShipData.class);
         String shipSign = shipData.getShipSign();
         String record = shipData.getRecord();
